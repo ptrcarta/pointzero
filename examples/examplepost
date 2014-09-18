@@ -1,0 +1,25 @@
+time: 2014-09-18 19:43
+
+title:post di prova
+
+#everything below this line is content (html)
+
+<p>
+I want to start blogging about technical matters, and the platform I chose is important.<br>
+while there's a lot of platforms available, I feel like it would be harder to integrate the
+existing one into my existing website design instead of buildin a new one.<br>
+What I wanted was:
+<ul>
+<li>a page for blogposts, one after another</li>
+<li>individual pages for each post</li>
+<li>for it to be static</li>
+</ul>
+<p>
+I wanted it static cause while posting happens seldom, reading is (hopely) more frequent, so it's more sensible
+in a low performance situation to serve static pages compiled once, rather than generate them each time.
+It also cuts db overhead and provides basically no vulnerability points.</p>
+<p>
+For now I will be content to be writing html so everything I need is to simpy parse a text file. For this my
+language of choice is bash because right now it's what I'm more confortable with. I hope it will be useful for others too,
+even in its ghetto style. Enjoy!
+</p>
