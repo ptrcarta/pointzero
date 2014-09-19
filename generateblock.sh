@@ -21,9 +21,19 @@ timestamp=$(date -jf"%F %H:%M" "$time" +"%s")
 echo $filetitle
 echo $timestamp
 
+#THIS IS SERIOUSLY SUBOPTIMAL
 
-echo "        <article>"
-echo "            <time>$time</time>"
-echo "            <h1>$title</h1>"
-cat <<<"$file"
-echo "        </article>"
+cat  >$filetitle.html <<EOF
+<!-- TIME $timestamp -->
+        <article>
+            <time>$time</time>
+            <h1>$title</h1>
+
+$file
+
+        <div class=permalink>Link to this article: <a href=$filetitle.html>$filetitle.html</a></div>
+        </article>
+
+EOF
+
+cat $filetitle.html
