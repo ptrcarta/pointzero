@@ -2,6 +2,6 @@
 
 cat templates/header.html
 
-./generateblock.sh examples/examplepost
+./generateblock.sh $1 
 
 cat templates/footer.html

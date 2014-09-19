@@ -2,7 +2,7 @@
 
 ### GENERATE THE ARTICLE BLOCK ###
 
-
+. configuration
 
 file="`cat $1`"
 
@@ -21,9 +21,8 @@ timestamp=$(date -jf"%F %H:%M" "$time" +"%s")
 echo $filetitle
 echo $timestamp
 
-#THIS IS SERIOUSLY SUBOPTIMAL
 
-cat  >$filetitle.html <<EOF
+cat  >$ARTICLES/$filetitle.html <<EOF
 <!-- TIME $timestamp -->
         <article>
             <time>$time</time>
@@ -31,9 +30,7 @@ cat  >$filetitle.html <<EOF
 
 $file
 
-        <div class=permalink>Link to this article: <a href=$filetitle.html>$filetitle.html</a></div>
+        <div class=permalink>Link to this article: <a href=$ARTICLES/$filetitle.html>$ARTICLES/$filetitle.html</a></div>
         </article>
 
 EOF
-
-cat $filetitle.html

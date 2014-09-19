@@ -1,0 +1,10 @@
+#were do you keep the files you need to compile?
+#atm only one directory
+
+POSTFILES_FOLDER=examples/input
+
+#Output files folder
+#what is the destination of the generated files?
+
+BLOG_FOLDER=examples/blog
+ARTICLES=$BLOG_FOLDER/articles_content
