@@ -1,17 +1,29 @@
+#!/bin/bash
+
 ### GENERATE THE ARTICLE BLOCK ###
 
-commentstrip
 
-varparse $1 time
-varparse $1 title
 
-function varparse {
+file="`cat $1`"
 
-#$1 is the file to parse
-#$2 is the keyword to parse for
-local key=$2
-local result=$(grep -m1 "$key:" $1 | sed 's/$key:\(.*\)/\1/')
+#strip comments
+file=$(cat <<<"$file" | sed 's/#.*//')
 
-$2=$result
+time=$(cat <<<"$file" | grep -m1 "TIME" | sed 's/TIME \(.*\)/\1/')
+file=$(cat <<<"$file" | sed '0,/^TIME/s/^TIME.*//')
 
-}
+title=$(cat <<<"$file" | grep -m1 "TITLE" $1 | sed 's/TITLE \(.*\)/\1/')
+file=$(cat <<<"$file" | sed '0,/^TITLE/s/^TITLE.*//')
+
+filetitle=$(echo $title | sed 's/[\s]*$//g' | sed 's/[^a-zA-Z0-9]/_/g')
+timestamp=$(date -jf"%F %H:%M" "$time" +"%s")
+
+echo $filetitle
+echo $timestamp
+
+
+echo "        <article>"
+echo "            <time>$time</time>"
+echo "            <h1>$title</h1>"
+cat <<<"$file"
+echo "        </article>"
