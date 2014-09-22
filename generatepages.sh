@@ -29,7 +29,7 @@ do
     <footer>
     <ul>
 EOF
-        while [[ $pagescounter le $pages ]]
+        while [[ $pagescounter -le $pages ]]
         do
             if [[ ((count/POSTSXPAGE)) = $pagescounter ]]
             then 
