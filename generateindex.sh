@@ -11,10 +11,11 @@ EOF
 while read post
 do
     time=$(echo $post | awk '{print $1}')
-    link=$(echo $post | awk '{print $2}')
+    link=$(echo $post | awk '{print $2}'| sed 's/\.block/.html/' | xargs basename)
     posttitle=$(echo $post | sed 's/.*<h1>\(.*\)<\/h1>/\1/')
+    #FIX THE LINKS IN PRODUCTION
     cat <<EOF
-    <li><a href="$link">$posttitle</a>
+    <li><a href="articles/$link">$posttitle</a>
     <span class=pub-date>$(date -jf"%s" $time +"%F") </span>
     </li>
 EOF
