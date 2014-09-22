@@ -3,7 +3,7 @@ echo "INITIATE generatepages.sh" >&2
 POSTSXPAGE=3
 
 articles=$(wc -l sortedlist)
-pages=((articles/POSTSXPAGE))
+pages=$((articles/POSTSXPAGE))
 
 count=1
 
@@ -33,7 +33,7 @@ do
 EOF
         while [[ $pagescounter -le $pages ]]
         do
-            if [[ ((count/POSTSXPAGE)) = $pagescounter ]]
+            if [[ $((count/POSTSXPAGE)) = $pagescounter ]]
             then 
                 echo "<li class=active>" >>$BLOG_FOLDER/$file
             else
