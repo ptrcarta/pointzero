@@ -8,3 +8,4 @@ export POSTFILES_FOLDER=examples/input
 
 export BLOG_FOLDER=examples/blog
 export ARTICLES=$BLOG_FOLDER/articles_content
+export ARTICLES_PAGES=$BLOG_FOLDER/articles
