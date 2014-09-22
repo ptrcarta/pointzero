@@ -1,6 +1,10 @@
 #! /bin/bash
 
-.configuration
+. configuration
 
-rm $ARITCLES/*
-rm $ARTICLES_PAGES/*
+if [[ -n "$ARTICLES" ]] && [[ -n "$ARTICLES_PAGES" ]]
+then
+    echo $ARTICLES $ARTICLES_PAGES
+    rm $ARTICLES/*
+    rm $ARTICLES_PAGES/*
+fi
