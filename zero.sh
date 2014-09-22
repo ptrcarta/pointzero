@@ -35,8 +35,6 @@ sort -n bloglist >sortedlist
 
 for article in $ARTICLES/*
 do
-    art_name=$(basename $article)
-    ./generatepermlink $article >$ARTICLES_PAGES/$art_name.html
+    art_name=$(basename $article | sed 's/.block//')
+    ./generatepermlink.sh $article >$ARTICLES_PAGES/$art_name.html
 done
-
-
