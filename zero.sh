@@ -36,4 +36,10 @@ sortedlist >sortedfifo
 
 #generate individual articles
 
+for article in $ARTICLES/*
+do
+    art_name=$(basename $article)
+    ./generatepermlink $article >$ARTICLES_PAGES/$art_name.html
+done
+
 

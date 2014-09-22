@@ -21,7 +21,7 @@ echo $filetitle
 echo $timestamp
 
 
-cat  >$ARTICLES/$filetitle.html <<EOF
+cat  >$ARTICLES/$filetitle.block <<EOF
 <!-- TIME $timestamp -->
         <article>
             <time>$time</time>
@@ -29,7 +29,7 @@ cat  >$ARTICLES/$filetitle.html <<EOF
 
 $file
 
-        <div class=permalink>Link to this article: <a href=$ARTICLES/$filetitle.html>$ARTICLES/$filetitle.html</a></div>
+        <div class=permalink>Link to this article: <a href=$ARTICLES_PAGES/$filetitle.html>$ARTICLES_PAGES/$filetitle.html</a></div>
         </article>
 
 EOF
