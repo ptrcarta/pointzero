@@ -7,7 +7,7 @@ pages=$((articles/POSTSXPAGE))
 
 count=1
 
-for line in $(cat sortedlist)
+while read line
 do
 
 #########################################################
@@ -53,4 +53,4 @@ EOF
     fi
 
     ((count++))
-done
+done <sortedlist

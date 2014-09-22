@@ -8,17 +8,17 @@ cat <<EOF
 EOF
 
 
-for post in `cat $1`
+while read post
 do
     time=$(echo $post | awk '{print $1}')
     link=$(echo $post | awk '{print $2}')
-    posttitle=$(echo $post | sed 's/<h1>\(.*\)<\/h1>/\1/')
+    posttitle=$(echo $post | sed 's/.*<h1>\(.*\)<\/h1>/\1/')
     cat <<EOF
-    <li><a href="$link">$posttitle<a>
+    <li><a href="$link">$posttitle</a>
     <span class=pub-date>$(date -jf"%s" $time +"%F") </span>
     </li>
 EOF
-done
+done <$1
 
 cat <<EOF
     </ul>
