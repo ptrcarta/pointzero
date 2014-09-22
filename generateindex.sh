@@ -6,7 +6,7 @@ cat <<EOF
 EOF
 
 
-for post in `cat sortedlist`
+for post in `cat $1`
 do
     time=$(echo $post | awk '{print $1}')
     link=$(echo $post | awk '{print $2}')

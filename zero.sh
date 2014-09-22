@@ -25,9 +25,14 @@ sort -n bloglist >sortedlist
 
 #generate index
 
-./generateindex.sh
+./generateindex.sh sortedlist >$BLOG_FOLDER/index.html
 
 #generate pages
+
+mkfifo sortedfifo
+sortedlist >sortedfifo
+
+./generatepages.sh
 
 #generate individual articles
 
