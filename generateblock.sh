@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### GENERATE THE ARTICLE BLOCK ###
-
+echo "INITIATING generateblock.sh" >&2
 
 file="`cat $1`"
 

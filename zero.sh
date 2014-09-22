@@ -29,9 +29,6 @@ sort -n bloglist >sortedlist
 
 #generate pages
 
-mkfifo sortedfifo
-sortedlist >sortedfifo
-
 ./generatepages.sh
 
 #generate individual articles

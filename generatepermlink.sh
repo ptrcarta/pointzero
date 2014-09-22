@@ -1,4 +1,4 @@
-#!/bin/bash
+echo "INITIATE generatepermlink.sh" >&2
 
 cat templates/header.html
 

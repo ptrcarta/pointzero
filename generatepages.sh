@@ -1,3 +1,5 @@
+echo "INITIATE generatepages.sh" >&2
+
 POSTSXPAGE=3
 
 articles=$(wc -l sortedlist)
@@ -5,7 +7,7 @@ pages=((articles/POSTSXPAGE))
 
 count=1
 
-while read -u sortedfifo line
+for line in $(cat sortedlist)
 do
 
 #########################################################
