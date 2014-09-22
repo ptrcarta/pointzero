@@ -2,7 +2,6 @@
 
 ### GENERATE THE ARTICLE BLOCK ###
 
-. configuration
 
 file="`cat $1`"
 

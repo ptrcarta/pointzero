@@ -25,6 +25,8 @@ sort -n bloglist >sortedlist
 
 #generate index
 
+./generateindex.sh
+
 #generate pages
 
 #generate individual articles
