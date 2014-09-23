@@ -21,7 +21,7 @@ do
 done
 
 #sort
-sort -n bloglist >sortedlist
+sort -rn bloglist >sortedlist
 
 #generate index
 
