@@ -2,6 +2,9 @@
 
 . configuration
 
+#cleanup existing files
+./cleanup.sh
+
 #compile to <article>
 for inputfile in $POSTFILES_FOLDER/*
 do
@@ -38,3 +41,9 @@ do
     art_name=$(basename $article | sed 's/\.block//')
     ./generatepermlink.sh $article >$ARTICLES_PAGES/$art_name.html
 done
+
+#Cleanup
+rm sortedlist bloglist
+if [[ -n "$ARTICLES" ]] then
+    rm $ARTICLES/*
+fi
