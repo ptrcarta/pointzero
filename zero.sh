@@ -44,6 +44,7 @@ done
 
 #Cleanup
 rm sortedlist bloglist
-if [[ -n "$ARTICLES" ]] then
+if [[ -n "$ARTICLES" ]]
+then
     rm $ARTICLES/*
 fi
