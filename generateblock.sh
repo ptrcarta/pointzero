@@ -15,7 +15,7 @@ title=$(cat <<<"$file" | grep -m1 "TITLE" $1 | sed 's/TITLE \(.*\)/\1/')
 file=$(cat <<<"$file" | sed '0,/^TITLE/s/^TITLE.*//')
 
 filetitle=$(echo $title | sed 's/[\s]*$//g' | sed 's/[^a-zA-Z0-9]/_/g')
-timestamp=$(date -jf"%F %H:%M" "$time" +"%s")
+timestamp=$(date -d "$time" +"%s")
 
 echo $filetitle
 echo $timestamp
