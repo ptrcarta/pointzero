@@ -5,3 +5,6 @@ Bash blog builder. You feed it a date and the raw html for the content of each b
 I try to keep this low dependencies.
 Apart from bash, it makes use of gnu-sed or ssed specific functions. on OSX/*BSD default sed won't cut it.
 
+#Todo
+links to blog homepage in permalinked articles
+favicons
