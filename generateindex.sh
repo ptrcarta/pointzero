@@ -16,7 +16,7 @@ do
     #FIX THE LINKS IN PRODUCTION
     cat <<EOF
     <li><a href="articles/$link">$posttitle</a>
-    <span class=pub-date>$(date -jf"%s" $time +"%F") </span>
+    <span class=pub-date>$(date -d \@$time +"%F") </span>
     </li>
 EOF
 done <$1
