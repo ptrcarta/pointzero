@@ -1,11 +1,11 @@
 #were do you keep the files you need to compile?
 #atm only one directory
 
-export POSTFILES_FOLDER=examples/input
+export POSTFILES_FOLDER=~pietro/blog/input
 
 #Output files folder
 #what is the destination of the generated files?
 
-export BLOG_FOLDER=examples/blog
-export ARTICLES=$BLOG_FOLDER/articles_content
+export BLOG_FOLDER=/var/www/blog.carta.im
+export ARTICLES=~pietro/blog/tmp_articles
 export ARTICLES_PAGES=$BLOG_FOLDER/articles
