@@ -25,7 +25,7 @@ do
 
 
 ## This happens after every last post in each page
-if [[ $(( $count % $POSTSXPAGE )) == 0 ]]
+if [[ $(( $count % $POSTSXPAGE )) == 0 || $count == $articles ]]
     then
         pagescounter=0
 
