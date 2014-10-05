@@ -29,7 +29,7 @@ cat  >$ARTICLES/$filetitle.block <<EOF
 
 $file
 
-        <div class=permalink>Link to this article: <a href=$ARTICLES_PAGES/$filetitle.html>$ARTICLES_PAGES/$filetitle.html</a></div>
+        <div class=permalink>Link to this article: <a href=http://carta.im/blog/articles/$filetitle.html>http://carta.im/blog/articles/$filetitle.html</a></div>
         </article>
 
 EOF
